@@ -1,0 +1,22 @@
+<div class="edit-footballer" *ngIf="footballer">
+    <h2>{{ footballer.lastName }}</h2>
+    <div>
+        First Name:
+        <input [(ngModel)]="footballer.firstName" placeholder="First Name" />
+    </div>
+    <div>
+        Last Name:
+        <input [(ngModel)]="footballer.lastName" placeholder="Last Name" />
+    </div>
+    <div>
+        Goals:
+        <input [(ngModel)]="footballer.goals" placeholder="Goals" />
+    </div>
+    <div>
+        Team:
+        <input [(ngModel)]="footballer.team" placeholder="Team" />
+    </div>
+    <button (click)="updateFootballer(footballer)" *ngIf="footballer.id">Save</button>
+    <button (click)="deleteFootballer(footballer)" *ngIf="footballer.id">Delete</button>
+    <button (click)="createFootballer(footballer)" *ngIf="!footballer.id">Create</button>
+</div>

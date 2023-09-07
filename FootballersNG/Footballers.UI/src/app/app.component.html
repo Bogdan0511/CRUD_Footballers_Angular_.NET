@@ -1,0 +1,24 @@
+<div class="app-container">
+  <button class="create-footballer-btn" (click)="initNewFootballer()">Create new footballer</button>
+
+  <table class="footballers-list">
+      <thead>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Number of goals</th>
+          <th>Team</th>
+          <th></th>
+      </thead>
+      <tbody>
+          <tr *ngFor="let footballer of footballers">
+              <td>{{ footballer.firstName }}</td>
+              <td>{{ footballer.lastName }}</td>
+              <td>{{ footballer.goals }}</td>
+              <td>{{ footballer.team }}</td>
+              <td><button (click)="editFootballer(footballer)">Edit</button></td>
+          </tr>
+      </tbody>
+  </table>
+
+  <app-edit-footballer [footballer]="footballerToEdit" (footballersUpdated)="updateFootballerList($event)"></app-edit-footballer>
+</div>
